@@ -1,2 +1,12 @@
 server:
   port: 9090
+
+spring:
+  data:
+    mongodb:
+      #host: ds163182.mlab.com
+      #port: 63182
+      #username: Bhargo_DEV
+      #password:
+      uri: mongodb://${MONGO_USERNAME}:${MONGO_PASSWORD}@ds163182.mlab.com:63182/mongoml
+      database: mongoml
