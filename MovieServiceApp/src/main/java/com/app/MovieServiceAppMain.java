@@ -18,9 +18,9 @@ public class MovieServiceAppMain implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        System.getenv().entrySet().stream().forEach(entry -> {
+        /*System.getenv().entrySet().stream().forEach(entry -> {
             System.out.println(entry.getKey() + " >> " + entry.getValue());
         });
-        movieService.getAllMovies().forEach(System.out::println);
+        movieService.getAllMovies().forEach(System.out::println);*/
     }
 }

@@ -1,10 +1,12 @@
 package com.app.service.api;
 
-import com.app.repo.model.Movie;
+import com.movie.response.MovieResponse;
 
 import java.util.List;
 
 public interface MovieService {
 
-    List<Movie> getAllMovies();
+    List<MovieResponse> getAllMovies();
+
+    MovieResponse getByTitle(String name);
 }

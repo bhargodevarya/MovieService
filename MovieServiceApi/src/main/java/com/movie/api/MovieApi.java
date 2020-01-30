@@ -2,9 +2,11 @@ package com.movie.api;
 
 import com.movie.response.MovieResponse;
 
+import java.util.List;
+
 public interface MovieApi {
 
-    MovieResponse getAllMovies();
+    List<MovieResponse> getAllMovies();
 
-    MovieResponse getMovieByTitle();
+    MovieResponse getMovieByTitle(String name);
 }
