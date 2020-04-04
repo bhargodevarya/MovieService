@@ -25,11 +25,8 @@ public class MovieServiceImpl implements MovieService {
     public List<MovieResponse> getAllMovies() {
         List<Movie> movies = movieRepo.findAll();
         return movies.stream()
-                .map(movie -> {
-                    System.out.println(movie.getTitle());
-                    return new MovieResponse(movie.getTitle(), movie.getGenres(),
-                            Integer.valueOf(!StringUtils.isEmpty(movie.getYear()) ? movie.getYear() : "0"));
-                })
+                .map(movie -> new MovieResponse(movie.getTitle(), movie.getGenres(),
+                            Integer.valueOf(!StringUtils.isEmpty(movie.getYear()) ? movie.getYear() : "0")))
                 .collect(Collectors.toList());
     }
 

@@ -1,5 +1,6 @@
 FROM openjdk:8
 
+#passed while building image, not a proper way
 ARG mongo_username
 ARG mongo_password
 
