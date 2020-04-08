@@ -15,7 +15,7 @@ echo "Current commit is $currentCommit"
 
 if [ "$ORIGIN_BRANCH" == "master" ]; then
   ./gradlew bootJar
-  tag="bhargodevarya/movieservice:eureka-"
+  tag="bhargodevarya/movieservice:ms-"
   echo "starting the script"
   tag+="${COMMIT:0:6}"
 
