@@ -1,0 +1,34 @@
+language: java
+
+os: linux
+
+sudo: required
+
+services:
+  - docker
+
+branches:
+  only:
+    - master
+    - /feature*/
+
+before_install:
+  - echo "This is before install"
+
+install: skip
+
+script:
+  - bash build.sh $DOCKER_HUB_ID $DOCKER_HUB_PWD $TRAVIS_PULL_REQUEST_BRANCH $TRAVIS_BRANCH
+
+after_script:
+  - echo "Script is finished"
+
+#TODO, deploy to EBS
+#deploy:
+#  provider: script
+#  script: bash dockerpush.sh $DOCKER_HUB_ID $DOCKER_HUB_PWD
+#  on:
+#    master
+
+after_success:
+  - echo "after success"
