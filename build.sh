@@ -21,7 +21,7 @@ if [ "$ORIGIN_BRANCH" == "master" ]; then
 
   echo "Creating image with tha tag $tag"
 
-  docker image build -t "$tag" .
+  docker image build -t "$tag" -f ./MovieServiceApp/Dockerfile .
   docker login -u "$DOCKER_HUB_ID" -p "$DOCKER_HUB_PWD"
   docker image push "$tag"
   docker logout
