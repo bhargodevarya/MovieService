@@ -33,6 +33,6 @@ public class Movie implements MovieApi {
     @Override
     @GetMapping(value = "/health")
     public String health() {
-        return "healthy depoyment";
+        return "healthy deployment";
     }
 }
