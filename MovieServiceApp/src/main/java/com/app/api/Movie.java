@@ -29,4 +29,10 @@ public class Movie implements MovieApi {
     public MovieResponse getMovieByTitle(@PathVariable String name) {
         return movieService.getByTitle(name);
     }
+
+    @Override
+    @GetMapping(value = "/health")
+    public String health() {
+        return "healthy";
+    }
 }
