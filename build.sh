@@ -17,9 +17,9 @@ echo "Current commit is $currentCommit"
 
 if [ "$ORIGIN_BRANCH" == "master" ]; then
   ./gradlew bootJar
-  tag="bhargodevarya/movieservice:ms-"
+  tag="bhargodevarya/movieservice:latest"
   echo "starting the script"
-  tag+="${COMMIT:0:6}"
+  #tag+="${COMMIT:0:6}"
 
   echo "Creating image with tha tag $tag"
 
