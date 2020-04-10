@@ -3,8 +3,10 @@
 echo "Starting the script to build"
 DOCKER_HUB_ID=$1
 DOCKER_HUB_PWD=$2
-ORIGIN_BRANCH=$3
-TARGET_BRANCH=$4
+MONGO_USERNAME=$3
+MONGO_PWD=$4
+ORIGIN_BRANCH=$5
+TARGET_BRANCH=$6
 
 echo "Source branch is $ORIGIN_BRANCH and target branch is $TARGET_BRANCH"
 
@@ -21,7 +23,8 @@ if [ "$ORIGIN_BRANCH" == "master" ]; then
 
   echo "Creating image with tha tag $tag"
 
-  docker image build -t "$tag" -f ./MovieServiceApp/Dockerfile .
+  #TODO, find a better way to pass mongo credentials
+  docker image build -t "$tag" --build-arg mongo_username="$MONGO_USERNAME" --build-arg mongo_password="$MONGO_PWD" -f ./MovieServiceApp/Dockerfile .
   docker login -u "$DOCKER_HUB_ID" -p "$DOCKER_HUB_PWD"
   docker image push "$tag"
   docker logout
