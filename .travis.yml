@@ -21,6 +21,16 @@ install: skip
 script:
   - bash build.sh $DOCKER_HUB_ID $DOCKER_HUB_PWD  $MONGO_USERNAME $MONGO_PWD $TRAVIS_PULL_REQUEST_BRANCH $TRAVIS_BRANCH
 
+deploy:
+  provider: codedeploy
+  access_key_id: $AWS_ID
+  secret_access_key: $AWS_SECRET
+  bucket: movieapp-deployment
+  key: appspec.yaml
+  bundle_type: yaml
+  application: AppECS-movieapp-cluster-movieapp-service-2
+  deployment_group: DgpECS-movieapp-cluster-movieapp-service-2
+
 after_script:
   - echo "Script is finished"
 
