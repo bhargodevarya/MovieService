@@ -34,7 +34,5 @@ deploy:
 after_script:
   - echo "Script is finished"
 
-#TODO, deploy to ECS
-
 after_success:
   - echo "after success"

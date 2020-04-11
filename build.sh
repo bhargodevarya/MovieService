@@ -13,10 +13,10 @@ echo "Source branch is $ORIGIN_BRANCH and target branch is $TARGET_BRANCH"
 COMMIT=$(git rev-parse HEAD)
 echo "Current commit is $currentCommit"
 
-./gradlew check
+gradle check
 
 if [ "$ORIGIN_BRANCH" == "master" ]; then
-  ./gradlew bootJar
+  gradle bootJar
   tag="bhargodevarya/movieservice:latest"
   echo "starting the script"
   #tag+="${COMMIT:0:6}"
