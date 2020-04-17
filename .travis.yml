@@ -28,8 +28,8 @@ deploy:
   bucket: movieapp-deployment
   key: appspec.yaml
   bundle_type: yaml
-  application: AppECS-movieapp-cluster-movieapp-service
-  deployment_group: DgpECS-movieapp-cluster-movieapp-service
+  application: AppECS-moviapp-cluster-movieapp-service
+  deployment_group: DgpECS-moviapp-cluster-movieapp-service
 
 after_script:
   - echo "Script is finished"
