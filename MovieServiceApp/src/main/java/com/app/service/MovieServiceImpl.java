@@ -15,11 +15,15 @@ import java.util.stream.Collectors;
 @Component
 public class MovieServiceImpl implements MovieService {
 
-    @Autowired
     private MongoTemplate mongoTemplate;
 
-    @Autowired
     private MovieRepo movieRepo;
+
+    @Autowired
+    public MovieServiceImpl(MongoTemplate mongoTemplate, MovieRepo movieRepo) {
+        this.mongoTemplate = mongoTemplate;
+        this.movieRepo = movieRepo;
+    }
 
     @Override
     public List<MovieResponse> getAllMovies() {
