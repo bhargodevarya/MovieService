@@ -9,5 +9,12 @@ spring:
       #username: Bhargo_RO
       #password:
       #set while building the image using docker
-      uri: mongodb://${MONGO_USERNAME}:${MONGO_PASSWORD}@ds163182.mlab.com:63182/mongoml
+      uri: mongodb://Bhargo_RO:M0ngo#2000@ds163182.mlab.com:63182/mongoml
       database: mongoml
+
+management:
+  endpoints:
+    enabled-by-default: false
+  endpoint:
+    health:
+      enabled: true

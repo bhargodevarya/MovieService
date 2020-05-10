@@ -9,6 +9,4 @@ public interface MovieApi {
     List<MovieResponse> getAllMovies();
 
     MovieResponse getMovieByTitle(String name);
-
-    String health();
 }
